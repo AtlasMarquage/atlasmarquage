@@ -211,7 +211,7 @@ margin:15px 0;
 }
 
 
-}
+
 
 /* CONTACT */
 
@@ -267,6 +267,70 @@ justify-content:space-between;
 font-size:0.8rem;
 }
 
+/* COOKIE BANNER */
+
+.cookie-box{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#111;
+color:white;
+padding:20px;
+width:260px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+font-size:0.85rem;
+z-index:9999;
+}
+
+.cookie-buttons{
+margin-top:12px;
+display:flex;
+gap:10px;
+}
+
+.cookie-buttons button{
+flex:1;
+border:none;
+padding:8px;
+cursor:pointer;
+font-weight:600;
+border-radius:4px;
+}
+
+.accept-cookie{
+background:#FFD700;
+color:black;
+}
+
+.reject-cookie{
+background:#444;
+color:white;
+}
+
+/* TOP CONTACT BAR */
+
+.top-bar{
+background:#FFD700;
+color:black;
+padding:8px 5%;
+font-size:0.9rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-weight:600;
+}
+
+.top-bar a{
+color:black;
+text-decoration:none;
+margin-left:20px;
+}
+
+.top-bar a:hover{
+text-decoration:underline;
+}
+
 /* MOBILE */
 
 @media(max-width:900px){
@@ -289,6 +353,26 @@ display:none;
 </head>
 
 <body>
+
+<div class="top-bar">
+
+<div>
+Service de marquage partout au Québec
+</div>
+
+<div>
+
+<a href="tel:15144094393">
+📞 514-409-4393
+</a>
+
+<a href="mailto:info@atlasmarquage.ca">
+✉️ info@atlasmarquage.ca
+</a>
+
+</div>
+
+</div>
 
 <nav>
 
@@ -391,7 +475,7 @@ visibles et conformes aux normes afin d'améliorer la sécurité de vos espaces.
 </div>
 
 <div>
-<img src="equipe.jpg">
+<img src="marquage_stationnement.jpg">
 </div>
 
 </div>
@@ -461,15 +545,51 @@ Remplissez le formulaire pour une soumission rapide.
 
 </div>
 
-</section>
+
 
 <footer>
+
+<a href="confidentialite.html">
+Politique de confidentialité
+</a>
 
 <p>© 2026 ATLAS MARQUAGE</p>
 
 <p>Marquage de stationnement au Québec</p>
 
 </footer>
+<div id="cookieBox" class="cookie-box">
+
+Ce site utilise des cookies pour améliorer votre expérience.
+
+<div class="cookie-buttons">
+
+<button class="accept-cookie" onclick="acceptCookies()">Accepter</button>
+
+<button class="reject-cookie" onclick="rejectCookies()">Refuser</button>
+
+</div>
+
+</div>
+<script>
+
+function acceptCookies(){
+localStorage.setItem("cookieChoice","accepted");
+document.getElementById("cookieBox").style.display="none";
+}
+
+function rejectCookies(){
+localStorage.setItem("cookieChoice","rejected");
+document.getElementById("cookieBox").style.display="none";
+}
+
+window.onload=function(){
+if(localStorage.getItem("cookieChoice")){
+document.getElementById("cookieBox").style.display="none";
+}
+}
+
+</script>
 
 </body>
 </html>
