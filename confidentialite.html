@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité | Atlas Marquage</title>
+<meta name="description" content="Politique de confidentialité d'Atlas Marquage pour le site web. Nous protégeons vos informations personnelles et respectons votre vie privée.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#FFD700;
+  --dark:#0f0f0f;
+  --text:#1a1a1a;
+  --grey:#f4f4f4;
+}
+
+* { box-sizing:border-box; scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:white;
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* NAVIGATION (même que page d'accueil) */
+nav{
+  background:rgba(15,15,15,0.98);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #333;
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.nav-logo img{
+  height:50px;
+}
+
+.nav-logo span{
+  color:white;
+  font-weight:900;
+  font-size:1.3rem;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  color:#aaa;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.85rem;
+  text-transform:uppercase;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+/* CONTENU PRINCIPAL */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h1{
+  font-size:2.5rem;
+  margin-bottom:40px;
+}
+
+h2{
+  margin-top:40px;
+}
+
+a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+footer{
+  background:#000;
+  color:#777;
+  padding:40px 20px;
+  text-align:center;
+  font-size:0.9rem;
+}
+
+/* Cookie Banner */
+.cookie-box{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#222;
+  color:white;
+  padding:15px 20px;
+  border-radius:8px;
+  z-index:10000;
+}
+
+.cookie-buttons{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+}
+
+.cookie-buttons button{
+  padding:6px 12px;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.accept-cookie{background:var(--primary); color:#000;}
+.reject-cookie{background:#555; color:white;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="atlaslogo1.png" alt="Atlas Marquage Logo">
+    <span>Atlas Marquage</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">Pourquoi nous</a>
+    <a href="index.html#reviews">Avis</a>
+    <a href="index.html#contact">Soumission</a>
+  </div>
+</nav>
+
+<!-- CONTENU DE LA PAGE -->
+<div class="container">
+  <h1>Politique de confidentialité</h1>
+
+  <p>
+  Chez <strong>Atlas Marquage</strong>, nous respectons la confidentialité
+  de nos visiteurs et nous nous engageons à protéger les informations
+  personnelles collectées sur ce site.
+  </p>
+
+  <h2>Collecte d'information</h2>
+  <p>Lorsque vous remplissez un formulaire sur notre site, nous pouvons recueillir :</p>
+  <ul>
+    <li>Nom</li>
+    <li>Numéro de téléphone</li>
+    <li>Adresse courriel</li>
+    <li>Description du projet</li>
+  </ul>
+
+  <h2>Utilisation des informations</h2>
+  <p>Ces informations sont utilisées uniquement pour répondre à votre demande de soumission ou communiquer avec vous.</p>
+
+  <h2>Cookies</h2>
+  <p>Notre site peut utiliser des cookies pour améliorer l'expérience utilisateur et analyser l'utilisation du site.</p>
+
+  <h2>Protection des données</h2>
+  <p>Nous mettons en place des mesures raisonnables pour protéger vos informations contre tout accès non autorisé.</p>
+
+  <h2>Contact</h2>
+  <p>
+    Pour toute question concernant cette politique de confidentialité :<br>
+    📧 info@atlasmarquage.ca<br>
+    📞 514-409-4393
+  </p>
+
+  <p style="margin-top:40px;font-size:0.9rem;color:#777;">
+    Dernière mise à jour : 2026
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="test 1.html">Retour à l'accueil</a><br>
+  © 2026 Atlas Marquage
+</footer>
+
+<!-- BANNIÈRE COOKIES -->
+<div id="cookieBox" class="cookie-box">
+  Ce site utilise des cookies pour améliorer votre expérience.
+  <div class="cookie-buttons">
+    <button class="accept-cookie" onclick="acceptCookies()">Accepter</button>
+    <button class="reject-cookie" onclick="rejectCookies()">Refuser</button>
+  </div>
+</div>
+
+<script>
+function acceptCookies(){
+  localStorage.setItem("cookieChoice","accepted");
+  document.getElementById("cookieBox").style.display="none";
+}
+function rejectCookies(){
+  localStorage.setItem("cookieChoice","rejected");
+  document.getElementById("cookieBox").style.display="none";
+}
+window.onload=function(){
+  if(localStorage.getItem("cookieChoice")){
+    document.getElementById("cookieBox").style.display="none";
+  }
+}
+</script>
+
+</body>
+</html>
